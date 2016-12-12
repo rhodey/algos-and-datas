@@ -1,0 +1,13 @@
+{
+  "name": "algos",
+  "author": "rhodey orbits",
+  "description": "algo and data structure practice.",
+  "license": "GPL-3.0",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "tape test/**/*.js"
+  },
+  "dependencies": {
+    "tape": "^4.6.3"
+  }
+}

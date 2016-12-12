@@ -1,0 +1,15 @@
+plugins {
+  id 'java'
+}
+
+repositories {
+  mavenCentral()
+}
+
+sourceCompatibility = 1.8
+version = '0.0.1'
+
+dependencies {
+  compile 'org.slf4j:slf4j-simple:1.7.13'
+  testCompile 'junit:junit:4.11'
+}
