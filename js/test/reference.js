@@ -1,9 +1,9 @@
 var test = require('tape');
+
+
 /*
  * MATH
  */
-
-
 test('testBinary', function (t) {
   t.plan(1);
   t.equal(new Number(1020).toString(2), '1111111100');
@@ -142,20 +142,6 @@ test('testMap', function (t) {
   t.equal(squared[3], 4*4);
 });
 
-test('testReduce', function (t) {
-  t.plan(1);
-  var arr = [1, 2, 3, 4];
-  var sum = arr.reduce(function(sum, val) {
-    return sum + val;
-  }, 0);
-
-  t.equal(sum, (1+2+3+4));
-});
-
-
-/*
- * SETS
- */
 test('testReduce', function (t) {
   t.plan(1);
   var arr = [1, 2, 3, 4];
