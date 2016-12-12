@@ -4,34 +4,34 @@ var test = require('tape');
  */
 
 
-var Item = function(val, next) {
-  this.val  = val;
-  this.next = next;
+var Item = function(value, next) {
+  this.value = value;
+  this.next  = next;
 }
 
 var Stack = function() {
-  this.head = undefined;
+  this.top = undefined;
 }
 
-Stack.prototype.push = function(val) {
-  if (this.head === undefined) {
-    this.head = new Item(val);
+Stack.prototype.push = function(value) {
+  if (this.top === undefined) {
+    this.top = new Item(value);
   } else {
-    this.head = new Item(val, this.head);
+    this.top = new Item(value, this.top);
   }
 }
 
 Stack.prototype.peek = function() {
-  return (this.head === undefined) ? undefined : this.head.val;
+  return (this.top !== undefined) ? this.top.value : undefined;
 }
 
 Stack.prototype.pop = function() {
-  if (this.head === undefined) {
+  if (this.top === undefined) {
     return undefined;
   } else {
-    var res   = this.head;
-    this.head = this.head.next;
-    return res.val;
+    var value = this.top.value;
+    this.top  = this.top.next;
+    return value;
   }
 }
 
