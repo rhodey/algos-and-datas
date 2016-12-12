@@ -37,23 +37,33 @@ Stack.prototype.pop = function() {
 
 
 test('testStack', function (t) {
-  t.plan(10);
+  t.plan(14);
 
   var stack = new Stack();
   t.equal(stack.peek(), undefined);
   t.equal(stack.pop(),  undefined);
 
   stack.push(1);
-  t.equal(stack.peek(), 1);
-  t.equal(stack.pop(),  1);
-  t.equal(stack.pop(),  undefined);
-
-  stack.push(1);
   stack.push(2);
   stack.push(3);
+
+  t.equal(stack.peek(), 3);
   t.equal(stack.pop(),  3);
+
+  stack.push(4);
+
+  t.equal(stack.peek(), 4);
+  t.equal(stack.pop(),  4);
   t.equal(stack.peek(), 2);
   t.equal(stack.pop(),  2);
+  t.equal(stack.peek(), 1);
   t.equal(stack.pop(),  1);
+
+  t.equal(stack.peek(), undefined);
   t.equal(stack.pop(),  undefined);
+
+  stack.push(5);
+
+  t.equal(stack.peek(), 5);
+  t.equal(stack.pop(),  5);
 });

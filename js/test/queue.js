@@ -43,23 +43,33 @@ Queue.prototype.dequeue = function() {
 
 
 test('testQueue', function (t) {
-  t.plan(10);
+  t.plan(14);
 
   var queue = new Queue();
   t.equal(queue.peek(),    undefined);
   t.equal(queue.dequeue(), undefined);
 
   queue.enqueue(1);
-  t.equal(queue.peek(),    1);
-  t.equal(queue.dequeue(), 1);
-  t.equal(queue.dequeue(), undefined);
-
-  queue.enqueue(1);
   queue.enqueue(2);
   queue.enqueue(3);
+
+  t.equal(queue.peek(),    1);
   t.equal(queue.dequeue(), 1);
+
+  queue.enqueue(4);
+
   t.equal(queue.peek(),    2);
   t.equal(queue.dequeue(), 2);
+  t.equal(queue.peek(),    3);
   t.equal(queue.dequeue(), 3);
+  t.equal(queue.peek(),    4);
+  t.equal(queue.dequeue(), 4);
+
+  t.equal(queue.peek(),    undefined);
   t.equal(queue.dequeue(), undefined);
+
+  queue.enqueue(5);
+
+  t.equal(queue.peek(),    5);
+  t.equal(queue.dequeue(), 5);
 });
